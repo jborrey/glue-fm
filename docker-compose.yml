@@ -2,6 +2,10 @@ version: '3'
 
 services:
   db:
-    image: postgres:10.5@sha256:1d26fae6c056760ed5aa5bb5d65d155848f48046ae8cd95c5b26ea7ceabb37ad
+    image: rethinkdb:2.3.6@sha256:4c29968663d36756019305814b725a613887c65d2185c3927cdfec1a127f5afd
     ports:
-    - "5432:5432"
+    - "28015:28015"
+  redis:
+    image: redis:5.0.0@sha256:481678b4b5ea1cb4e8d38ed6677b2da9b9e057cf7e1b6c988ba96651c6f6eff3
+    ports:
+    - "6379:6379"
