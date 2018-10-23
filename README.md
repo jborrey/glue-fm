@@ -24,11 +24,13 @@ Chat app geared towards music sharing.
 # stand up service containers
 docker-compose up
 
-# migrate db indexes
-rake nobrainer:sync_indexes
+# setup DB
+bin/rails c
+> NoBrainer.sync_schema
+> NoBrainer.seed
 
 # seed DB with test data
-rails db:seed
+rake nobrainer:seed
 ```
 
 ## Initial Implementation Plan:
