@@ -1,9 +1,7 @@
-class Comment
+class ChannelUser
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
 
-  belongs_to :thred
   belongs_to :user
-
-  field :message, type: Text, required: true
+  belongs_to :channel
 end

@@ -24,18 +24,13 @@ Chat app geared towards music sharing.
 # stand up service containers
 docker-compose up
 
-# setup DB
-bin/rails c
-> NoBrainer.sync_schema
-> NoBrainer.seed
-
-# seed DB with test data
+# setup DB - http://nobrainer.io/docs/db_management/
+rake nobrainer:sync_schema
 rake nobrainer:seed
 ```
 
 ## Initial Implementation Plan:
 
-1. Create Messages table + seed DB file.
 1. Display seed data via websocket (test with websocket CLI).
 1. React display of seed data + initial template.
 1. Interface to add data to messages table.
