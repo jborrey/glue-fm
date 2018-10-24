@@ -17,3 +17,27 @@ Chat app geared towards music sharing.
 - RethinkDB
 - Websocksets via ActionCable (+Redis)
 - Redux + React
+
+## Development
+
+```sh
+# stand up service containers
+docker-compose up
+
+# setup DB - http://nobrainer.io/docs/db_management/
+rake nobrainer:sync_schema
+rake nobrainer:seed
+```
+
+## Initial Implementation Plan:
+
+1. Display seed data via websocket (test with websocket CLI).
+1. React display of seed data + initial template.
+1. Interface to add data to messages table.
+1. Tracks table.
+1. Links table + module to translate links between music providers.
+1. Home page + authentication (Google OAuth).
+1. Table for Listens (user-track listen state) + recording listens.
+1. Export of playlists to music provider of choice.
+1. Scripts for AWS deployment.
+1. Design fixes.

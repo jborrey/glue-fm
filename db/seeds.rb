@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+if User.count > 1
+  raise 'DB already seeded'
+end
+
+email1 = 'yotto@example.com'
+email2 = '16bit@example.com'
+
+user1 = User.create(name: 'yotto', email: email1)
+user2 = User.create(name: '16 bit', email: email2)
+puts "Created #{User.count} users."
+
+channel = Channel.create(name: 'anjuna')
+puts "Created #{Channel.count} channels."
+
+channel_user1 = ChannelUser.create(channel: channel, user: user1)
+channel_user2 = ChannelUser.create(channel: channel, user: user2)
+puts "Created #{ChannelUser.count} channel-users."
+
+thred = Thred.create(channel: channel)
+puts "Created #{Thred.count} threads."
+
+comment1 = Comment.create(user: user1, thred: thred, message: 'sweet track https://www.youtube.com/watch?v=OsJSwGc4lsA')
+comment2 = Comment.create(user: user2, thred: thred, message: "It's a classic!")
+puts "Created #{Comment.count} comments."
