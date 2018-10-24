@@ -29,6 +29,13 @@ rake nobrainer:sync_schema
 rake nobrainer:seed
 ```
 
+#### Playing with Web Sockets
+
+```sh
+npm install -g wscat
+wscat -c "ws://localhost:3000/cable"
+```
+
 ## Initial Implementation Plan:
 
 1. Display seed data via websocket (test with websocket CLI).
