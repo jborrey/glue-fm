@@ -4,6 +4,7 @@ class Channel
 
   has_many :channel_users
   has_many :threds
+  has_many :comments
 
   field :name,  type: String, required: true
 end
