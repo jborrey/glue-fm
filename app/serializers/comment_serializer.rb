@@ -1,3 +1,3 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :message, :updated_at
+  attributes :id, :thred_id, :message, :created_at
 end
