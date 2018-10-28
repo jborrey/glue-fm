@@ -16,6 +16,10 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 module GlueFm
+  PROD_APP_DOMAIN = 'https://glue.fm'.freeze
+  DEV_APP_DOMAIN = 'localhost:3000'.freeze # API will run at localhost:3001
+  OAUTH_REDIRECT_PATH = '/channels'.freeze
+
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
@@ -31,5 +35,13 @@ module GlueFm
     config.api_only = true
 
     # config.action_cable.mount_path = '/cable'
+  end
+
+  def app_domain
+    Rails.env.production? ? PROD_APP_DOMAIN : DEV_APP_DOMAIN
+  end
+
+  def oauth_redirect_url
+    "#{app_domain}/#{OAUTH_REDIRECT_PATH}"
   end
 end

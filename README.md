@@ -41,8 +41,7 @@ wscat -c "ws://localhost:3000/cable"
 
 ## Initial Implementation Plan:
 
-1. Static pages
-1. Login + User auth
+1. Logout on User Icon
 1. Initial template for a single channel.
 1. Interface to write messages.
 1. Track table, Link table + module to translate links between music providers.
