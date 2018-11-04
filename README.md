@@ -1,6 +1,6 @@
 # GlueFM
 
-Chat app geared towards music sharing.
+Chat app built for sharing music efficiently.
 
 ## Features
 
@@ -15,8 +15,8 @@ Chat app geared towards music sharing.
 
 - RailsAPI
 - RethinkDB
-- Websocksets via ActionCable (+Redis)
-- Redux + React
+- Websocksets via ActionCable & Redis
+- React for the web client
 
 ## Development
 
@@ -29,7 +29,7 @@ rake nobrainer:sync_schema
 rake nobrainer:seed
 
 # run the server
-bin/rails s -p 3001
+bin/rails s
 ```
 
 #### Playing with Web Sockets
@@ -41,8 +41,7 @@ wscat -c "ws://localhost:3000/cable"
 
 ## Initial Implementation Plan:
 
-1. Static pages
-1. Login + User auth
+1. Logout on User Icon
 1. Initial template for a single channel.
 1. Interface to write messages.
 1. Track table, Link table + module to translate links between music providers.
@@ -52,6 +51,11 @@ wscat -c "ws://localhost:3000/cable"
 1. Multichannel
 1. Design fixes.
 
-## Important resources:
-  - https://medium.com/@dakota.lillie/using-action-cable-with-react-c37df065f296
-  - https://www.youtube.com/watch?v=CwF44oMOvJs
+## Useful resources
+  - RailsAPI + WebSockets + React: https://medium.com/@dakota.lillie/using-action-cable-with-react-c37df065f296
+  - RailsAPI + RethinkDB + WebSockets: https://www.youtube.com/watch?v=CwF44oMOvJs
+  - RailsAPI + Cookie Auth + React: https://pragmaticstudio.com/tutorials/rails-session-cookies-for-api-authentication
+  - Hybrid Client/Server OAuth: https://developers.google.com/identity/sign-in/web/server-side-flow
+  - TODO (glue youtube link)
+
+_Thank you to the authors!_

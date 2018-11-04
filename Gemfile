@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem 'active_model_serializers', '0.10.7'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'omniauth-google-oauth2', '~> 0.5.3'
 gem 'nobrainer', '~> 0.33.0' # rethinkDB ActiveRecord driver
 gem 'puma', '~> 3.11'        # rack server
 gem 'rack-cors', '~> 1.0.2'
@@ -14,6 +15,7 @@ gem 'redis', '~> 4.0.2'      # required for jobs and managing websockets
 # TOOD: secureheaders
 
 group :development, :test do
+  gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

@@ -5,8 +5,8 @@ end
 email1 = 'yotto@example.com'
 email2 = '16bit@example.com'
 
-user1 = User.create(name: 'yotto', email: email1)
-user2 = User.create(name: '16 bit', email: email2)
+user1 = User.create(name: 'yotto', email: email1, picture_url: 'https://TODO')
+user2 = User.create(name: '16 bit', email: email2, picture_url: 'https://TODO')
 puts "Created #{User.count} users."
 
 channel = Channel.create(name: 'anjuna')

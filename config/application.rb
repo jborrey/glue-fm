@@ -16,6 +16,9 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 module GlueFm
+  PROD_WWW_DOMAIN     = 'https://glue.fm'.freeze
+  DEV_WWW_DOMAIN      = 'localhost:3001'.freeze
+
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
@@ -30,6 +33,15 @@ module GlueFm
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Despite this being the API version of Rails, we will use cookies with our web
+    # frontend (instead of an API key or JWTs) since cookies are far more secure.
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+
     # config.action_cable.mount_path = '/cable'
+  end
+
+  def self.www_domain
+    Rails.env.production? ? PROD_WWW_DOMAIN : DEV_WWW_DOMAIN
   end
 end
