@@ -1,10 +1,11 @@
 # Be sure to restart your server when you modify this file.
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*' # TODO: restrict later
+    origins GlueFm.www_domain
 
     resource '*',
       headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      methods: [:get, :post, :put, :patch, :delete, :options, :head],
+      credentials: true
   end
 end
